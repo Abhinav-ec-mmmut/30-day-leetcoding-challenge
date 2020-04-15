@@ -1,0 +1,23 @@
+class Solution {
+public:
+    set<int> a;
+    bool isHappy(int n) {
+        int sum=0;
+        while(n>0){
+           int rem=n%10;
+            sum+=rem*rem;
+            n/=10;
+        }
+        if(sum==1)
+            return true;
+        else{
+            if(a.count(sum)==0)
+            {   a.insert(sum);
+                return isHappy(sum);
+            }
+            else
+                return false;
+        }
+        
+    }
+};
