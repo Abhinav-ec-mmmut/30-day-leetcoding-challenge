@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int maxSubArray(vector<int>& a) {
+        int sum,max;
+        sum=max=a[0];
+        for(int i=1;i<a.size();i++){
+            sum=(sum+a[i]>a[i]?sum+a[i]:a[i]);
+            max=sum>max?sum:max;
+        }
+        return max;
+    }
+};
